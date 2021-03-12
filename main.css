@@ -1,0 +1,121 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* src 為空值或沒有 src 屬性，避免在畫面上顯示預設外框 */
+img[src=""], img:not([src]), .btnDownload {
+  opacity: 0;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+label + input {
+  display: none;
+}
+
+section {
+  padding: 1rem;
+  text-align: center;
+}
+
+section:first-child {
+  width: 30%;
+}
+
+section:last-child {
+  width: 70%;
+}
+
+@media ( max-width: 414px ) {
+  section:first-child, section:last-child {
+    width: 100%;
+  }
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 10px;
+  border: 2px solid #007AFF;
+  outline: none;
+  background: #ffffff;
+  color: #007AFF;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+
+.loading {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+  background: rgba(0, 0, 0, 0.5);
+  color: #ffffff;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.bubbleBlock {
+  width:60px;
+  height:60px;
+  animation: bubbleRotate 2s linear infinite normal both;
+}
+
+.bubble {
+  display:inline-block;
+  position: absolute;
+  top: 0;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background-color:#87cefa;
+}
+
+.bubble:nth-child(1){
+  animation: bubbleScale 2s 0s infinite alternate both;  
+}
+
+.bubble:nth-child(2){
+  top: auto;
+  bottom: 0;
+  animation: bubbleScale 2s 1s infinite alternate both;
+}
+
+@keyframes bubbleScale {
+  0%{transform:scale(0, 0);}
+  100%{transform:scale(1, 1);}
+}
+@keyframes bubbleRotate {
+  0%{transform: rotate(0deg);}
+
+  100%{transform: rotate(360deg);}
+}

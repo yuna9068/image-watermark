@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="main.css">
+  <title>圖片添加浮水印</title>
+</head>
+<body>
+  <div class="main">
+    <section>
+      <div>
+        <label for="selectImg" class="btn">選擇圖片</label>
+        <input
+          id="selectImg"
+          type="file"
+          accept="image/*"
+          onchange="getImg(this)"
+          onclick="this.value=null;"
+        >
+      </div>
+      <div>
+        <img class="originalPhoto">
+      </div>
+    </section>
+    <section>
+      <div>
+        <button class="btn btnDownload">
+          <a class="downloadLink" download='watermark.png'>下載添加浮水印的圖片</a>
+        </button>
+      </div>
+      <div>
+        <img class="watermarkImg">
+      </div>
+    </section>
+  </div>
+
+  <div class="loading">
+    <div class="bubbleBlock">
+      <div class="bubble"></div>
+      <div class="bubble"></div>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
